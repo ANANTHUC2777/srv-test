@@ -1,0 +1,65 @@
+@use "../abstract/" as *;
+.ku-slider {
+  position: relative;
+  width: 100%;
+}
+
+.ku-slider__wrap {
+  .ku-slider__item {
+    text-align: center;
+  }
+}
+
+.ku-slider__progress {
+  position: absolute;
+  bottom: 4rem;
+  right: 5%;
+  width: 28rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 2;
+
+  .slide-current,
+  .slide-total {
+    color: var(--white);
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+    font-family: $font-body;
+  }
+
+  .progressBar {
+    width: 100%;
+    height: 0.1rem;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 0.4rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    .inProgress {
+      height: 6px;
+      width: 0%;
+      background: var(--white);
+      border-radius: 10px;
+      transition: width 0.1s linear;
+    }
+  }
+}
+
+@include media(1199px) {
+  .ku-slider__progress {
+    width: 20rem;
+  }
+}
+
+@include media(991px) {
+  .ku-slider__progress {
+    width: 20rem;
+    bottom: -4rem;
+    right: unset;
+    left: 0;
+  }
+}

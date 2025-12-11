@@ -1,0 +1,122 @@
+/********* HEADER *********/
+@use "../abstract/" as *;
+@use "../vendors/hamburger" as *;
+.ku-nav {
+  &__logo {
+    max-width: 25rem;
+    filter: brightness(0) invert(1);
+    margin-inline: 0;
+  }
+
+  &__wrap {
+    padding-block-start: 1.5rem;
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-block-end: 2.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      a {
+        color: var(--white);
+        font-family: $font-body;
+        font-weight: 400;
+        font-size: 1.7rem;
+      }
+    }
+  }
+
+  &--divider {
+    background-color: #fff3;
+    width: 0.1rem;
+    height: 2rem;
+  }
+
+  &__menu {
+    padding: 0 2rem;
+    a {
+      color: var(--white);
+      font-family: $font-body;
+      font-weight: 400;
+      font-size: 1.7rem;
+      padding: 0;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--red);
+      }
+    }
+  }
+
+  &--line {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: calc(100% - 50px);
+      height: 0.1rem;
+      background-color: var(--bg-two);
+      margin-block: 1.5rem;
+    }
+  }
+}
+
+@include media(1199px) {
+  .ku-nav__menu {
+    padding: 0 1rem;
+  }
+
+  .ku-nav__logo {
+    max-width: 20rem;
+  }
+
+  .ku-nav__contact li a {
+    font-size: 1.5rem;
+  }
+}
+
+@include media(991px) {
+  .ku-nav__contact {
+    display: none;
+  }
+
+  .ku-nav__links {
+    gap: 1.5rem;
+  }
+
+  .ku-nav--line::after {
+    display: none;
+  }
+
+  .ku-nav--line {
+    position: absolute;
+    width: 100%;
+    top: 7.3rem;
+    left: 0;
+    background: var(--white);
+  }
+
+  header nav > .container {
+    position: relative;
+  }
+
+  .ku-nav__wrap {
+    padding-block-end: 1.5rem;
+  }
+
+  .ku-nav__menu a {
+    color: var(--dark-gray);
+  }
+
+  .ku-nav {
+    padding-block-start: 2rem;
+  }
+}
