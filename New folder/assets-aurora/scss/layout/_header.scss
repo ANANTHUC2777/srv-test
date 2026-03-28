@@ -1,0 +1,102 @@
+/********* HEADER *********/
+@use "../abstract/" as *;
+@use "../vendors/hamburger" as *;
+
+.ma-nav {
+  margin-top: 3.2rem;
+  margin-bottom: 3.2rem;
+  max-width: 88.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  border: 1px solid var(--theme-border);
+  padding: 0.8rem;
+  background-color: var(--white);
+  border-radius: 7.2rem;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.6s ease-in-out;
+
+  &__logo {
+    img {
+      width: 16rem;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 3.2rem;
+    margin-top: 0;
+
+    a {
+      font-family: $font-body;
+      font-weight: 400;
+      color: var(--theme-black);
+      letter-spacing: 2%;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@include media(991px) {
+  .ma-nav__mobile-menu,
+  .ma-nav__links--lg,
+  .ma__btn--lg {
+    display: none;
+  }
+
+  .ma-nav__mobile-menu.open {
+    display: block;
+  }
+
+  .ma-nav {
+    position: relative;
+    max-width: 65.5rem;
+  }
+
+  .ma-nav__mobile-menu.open {
+    position: absolute;
+    background: var(--theme-white-secondary);
+    width: 100%;
+    left: 0;
+    top: 8rem;
+    padding: 2rem 0;
+    border: 1px solid var(--theme-border);
+    border-radius: 2.4rem;
+
+    ul {
+      flex-wrap: wrap;
+      li {
+        flex-basis: 100%;
+        display: block;
+        text-align: center;
+      }
+    }
+    .ma__btn {
+      max-width: 16.8rem;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2.4rem;
+    }
+  }
+}
+
+@include media(767px) {
+  .ma-nav {
+    max-width: 45.5rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .ma-nav {
+    max-width: 28.5rem;
+  }
+}
+
+@include lgmedia(992px) {
+  .ma-nav__mobile-menu,
+  .ma-nav__mobile {
+    display: none;
+  }
+}

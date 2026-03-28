@@ -1,102 +1,122 @@
 /********* HEADER *********/
 @use "../abstract/" as *;
 @use "../vendors/hamburger" as *;
-
-.ma-nav {
-  margin-top: 3.2rem;
-  margin-bottom: 3.2rem;
-  max-width: 88.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  border: 1px solid var(--theme-border);
-  padding: 0.8rem;
-  background-color: var(--white);
-  border-radius: 7.2rem;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.6s ease-in-out;
-
+.ku-nav {
   &__logo {
-    img {
-      width: 16rem;
+    max-width: 25rem;
+    filter: brightness(0) invert(1);
+    margin-inline: 0;
+  }
+
+  &__wrap {
+    padding-block-start: 1.5rem;
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-block-end: 2.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      a {
+        color: var(--white);
+        font-family: $font-body;
+        font-weight: 400;
+        font-size: 1.7rem;
+      }
     }
   }
 
-  &__links {
-    display: flex;
-    gap: 3.2rem;
-    margin-top: 0;
+  &--divider {
+    background-color: #fff3;
+    width: 0.1rem;
+    height: 2rem;
+  }
 
+  &__menu {
+    padding: 0 2rem;
     a {
+      color: var(--white);
       font-family: $font-body;
       font-weight: 400;
-      color: var(--theme-black);
-      letter-spacing: 2%;
-      text-transform: uppercase;
-      font-size: 1.6rem;
+      font-size: 1.7rem;
+      padding: 0;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--red);
+      }
     }
+  }
+
+  &--line {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: calc(100% - 50px);
+      height: 0.1rem;
+      background-color: var(--bg-two);
+      margin-block: 1.5rem;
+    }
+  }
+}
+
+@include media(1199px) {
+  .ku-nav__menu {
+    padding: 0 1rem;
+  }
+
+  .ku-nav__logo {
+    max-width: 20rem;
+  }
+
+  .ku-nav__contact li a {
+    font-size: 1.5rem;
   }
 }
 
 @include media(991px) {
-  .ma-nav__mobile-menu,
-  .ma-nav__links--lg,
-  .ma__btn--lg {
+  .ku-nav__contact {
     display: none;
   }
 
-  .ma-nav__mobile-menu.open {
-    display: block;
+  .ku-nav__links {
+    gap: 1.5rem;
   }
 
-  .ma-nav {
-    position: relative;
-    max-width: 65.5rem;
+  .ku-nav--line::after {
+    display: none;
   }
 
-  .ma-nav__mobile-menu.open {
+  .ku-nav--line {
     position: absolute;
-    background: var(--theme-white-secondary);
     width: 100%;
+    top: 7.3rem;
     left: 0;
-    top: 8rem;
-    padding: 2rem 0;
-    border: 1px solid var(--theme-border);
-    border-radius: 2.4rem;
-
-    ul {
-      flex-wrap: wrap;
-      li {
-        flex-basis: 100%;
-        display: block;
-        text-align: center;
-      }
-    }
-    .ma__btn {
-      max-width: 16.8rem;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 2.4rem;
-    }
+    background: var(--white);
   }
-}
 
-@include media(767px) {
-  .ma-nav {
-    max-width: 45.5rem;
+  header nav > .container {
+    position: relative;
   }
-}
 
-@media screen and (max-width: 575px) {
-  .ma-nav {
-    max-width: 28.5rem;
+  .ku-nav__wrap {
+    padding-block-end: 1.5rem;
   }
-}
 
-@include lgmedia(992px) {
-  .ma-nav__mobile-menu,
-  .ma-nav__mobile {
-    display: none;
+  .ku-nav__menu a {
+    color: var(--dark-gray);
+  }
+
+  .ku-nav {
+    padding-block-start: 2rem;
   }
 }

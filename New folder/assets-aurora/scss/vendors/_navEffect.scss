@@ -1,0 +1,40 @@
+/********* NAV EFFECT *********/
+.effect {
+  transition: all 0.6s ease-in-out;
+  .ma-nav {
+    max-width: 98.5rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .effect {
+    .ma-nav {
+      max-width: 80.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .effect {
+    .ma-nav {
+      max-width: 70.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .effect {
+    .ma-nav {
+      max-width: 50.5rem;
+    }
+  }
+}
+
+
+@media screen and (max-width: 575px) {
+  .effect {
+    .ma-nav {
+      max-width: 85%;
+    }
+  }
+}

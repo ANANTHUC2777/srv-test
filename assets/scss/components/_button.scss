@@ -1,66 +1,40 @@
 /********** BUTTONS ***********/
 @use "../abstract/" as *;
-.ma__btn {
-  position: relative;
-  background: var(--theme-black);
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  padding: 0.5rem 0.5rem 0.5rem 1.6rem;
-  border-radius: 5.5rem;
-  overflow: hidden;
+.ku__btn {
+  background-color: var(--red);
   cursor: pointer;
+  border-radius: 0.4rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 1rem;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  transition: transform 0.3s ease;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0.4rem;
-    bottom: 0.4rem;
-    right: 0.4rem;
-    left: 0.4rem;
-    background: var(--theme-yellow);
-    border-radius: 5.5rem;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.4s ease;
-    z-index: 0;
-  }
-
-  a {
-    color: var(--white);
-    font-family: $font-body;
-    letter-spacing: 5%;
+  span {
+    font-family: $font-head;
     font-weight: 600;
-    padding-left: 8px;
-    text-transform: uppercase;
-    font-size: 1.6rem;
-    position: relative;
-    z-index: 2;
-  }
-
-  .ma__bg {
-    position: relative;
-    z-index: 2;
+    font-size: 1.4rem;
+    color: var(--white);
   }
 
   &:hover {
-    &::before {
-      transform: scaleX(1);
-    }
+    animation: pulse 1s ease forwards;
   }
 }
 
-.ma__bg {
-  background: var(--theme-yellow);
-  width: 3.8rem;
-  height: 3.8rem;
-  border-radius: 50%;
-  position: relative;
-
-  img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* Pulse keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
   }
 }
