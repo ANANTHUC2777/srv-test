@@ -12,10 +12,12 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   overflow-x: hidden;
+  margin: 0;
 }
 
 header {
@@ -57,4 +59,52 @@ button:focus {
 .navbar-toggler-icon:focus {
   outline: none;
   box-shadow: none;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 575px) {
+  .container {
+    max-width: 100%;
+    padding-inline: 1rem;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 54rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 72rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 96rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 114rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 132rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .container {
+    max-width: 150rem;
+  }
 }
